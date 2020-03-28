@@ -7,11 +7,16 @@ request.onload = function() {
     var parsedData = JSON.parse(response);
     console.log(parsedData);
 
-    var name = parsedData[0].name;
+    
+    
+    for (const item in parsedData) {
+        var name = parsedData[item].name;
+        var products = document.createElement('li');
+        products.innerHTML = name;
+        document.body.appendChild(products);
+    }
 
-    var products = document.createElement('li');
-    products.innerHTML = name;
-    document.body.appendChild(products);
+   
 }
 
 request.send();
