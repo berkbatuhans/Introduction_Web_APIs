@@ -19,4 +19,8 @@ request.onload = function() {
    
 }
 
+request.onerror = function() {
+    console.log("There seems to be a problem");
+}
+
 request.send();
